@@ -10,7 +10,14 @@
 -------------------------------------------------------------------------- */
 function signoNumero(numero) {
   // TU CÓDIGO AQUÍ 👇
-}
+  if (numero > 0) {
+    return "positivo";
+  } else if (numero < 0) {
+    return "negativo";
+  } else {
+    return "cero";
+  }
+};
 
 /* --------------------------------------------------------------------------
    KATA 12 — Año Bisiesto
@@ -20,6 +27,11 @@ function signoNumero(numero) {
 -------------------------------------------------------------------------- */
 function esBisiesto(anio) {
   // TU CÓDIGO AQUÍ 👇
+  if (anio % 4 === 0 || anio % 400 === 0){
+    return true
+  } else if (anio % 100 === 0){
+    return false
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -29,6 +41,19 @@ function esBisiesto(anio) {
 -------------------------------------------------------------------------- */
 function tipoDia(dia) {
   // TU CÓDIGO AQUÍ 👇
+  if (dia === "Lunes") {
+    return "laborable"
+  } else if (dia === "Martes"){
+    return "laborable"
+  } else if (dia === "Miercoles"){
+    return "laborable"
+  } else if (dia === "Jueves"){
+    return "laborable"
+  } else if (dia === "Viernes"){
+    return "laborable"
+  } else if (dia === "Sabado" || "Domingo"){
+    return "fin de semana"
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -40,6 +65,13 @@ function tipoDia(dia) {
 -------------------------------------------------------------------------- */
 function precioEntrada(edad) {
   // TU CÓDIGO AQUÍ 👇
+  if (edad <= 12){
+    return "abona 500$"
+  } else if (edad >= 64){
+    return "abona 1200$"
+  } else if (edad >= 65){
+    return "abona 700$"
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -49,6 +81,11 @@ function precioEntrada(edad) {
 -------------------------------------------------------------------------- */
 function tieneContenido(texto) {
   // TU CÓDIGO AQUÍ 👇
+  if (texto.length > 0){
+    return "Tiene contenido"
+  } else {
+    return "Vacío"
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -60,6 +97,11 @@ function tieneContenido(texto) {
 -------------------------------------------------------------------------- */
 function puedeConducir(edad, aproboTeorico) {
   // TU CÓDIGO AQUÍ 👇
+  if (edad >=18 && aproboTeorico === true){
+    return "Puede sacar el registro"
+  } else if (edad < 18){
+    return "Menor de edad"
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -70,6 +112,19 @@ function puedeConducir(edad, aproboTeorico) {
 -------------------------------------------------------------------------- */
 function numeroDia(numero) {
   // TU CÓDIGO AQUÍ 👇
+  if (numero === 1){
+    return "lunes"
+  } else if (numero === 2){
+    return "Martes"
+  } else if (numero === 3){
+    return "Miercoles"
+  } else if (numero === 4){
+    return "Jueves"
+  } else if (numero === 5){
+    return "Viernes"
+  } else {
+    return "Día inválido"
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -82,6 +137,15 @@ function numeroDia(numero) {
 -------------------------------------------------------------------------- */
 function clasificarIMC(peso, altura) {
   // TU CÓDIGO AQUÍ 👇
+  if (peso <= 10 && altura < 18.5){
+    return "Bajo peso"
+  } else if (peso >= 10 && altura <= 24.9){
+    return "Normal"
+  } else if (peso >= 10 && altura <= 29.9){
+    return "Sobrepeso"
+  } else {
+    return "Obesidad"
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -91,6 +155,15 @@ function clasificarIMC(peso, altura) {
 -------------------------------------------------------------------------- */
 function valorPorDefecto(nombreUsuario) {
   // TU CÓDIGO AQUÍ 👇
+  if (nombreUsuario === null){
+    return "Anónimo"
+  }else if (nombreUsuario === undefined){
+    return "Anónimo"
+  } else if (nombreUsuario === ""){
+    return "Anónimo"
+  } else {
+    return nombreUsuario
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -103,6 +176,15 @@ function valorPorDefecto(nombreUsuario) {
 -------------------------------------------------------------------------- */
 function calificarNota(nota) {
   // TU CÓDIGO AQUÍ 👇
+  if (nota <= 59){
+    return "Reprobado"
+  } else if (nota <= 74){
+    return "Aprobado"
+  } else if (nota <= 89){
+    return "Notable"
+  } else if (nota <= 100){
+    return "sobresaliente"
+  };
 }
 
 // 🚨 ¡NO TOCAR ESTA LÍNEA!
