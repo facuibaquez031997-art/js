@@ -19,7 +19,26 @@
 -------------------------------------------------------------------------- */
 function fizzBuzzExtendido(n) {
   // TU CÓDIGO AQUÍ 👇
-}
+  if (n % 3 === 0) {
+    return "Fizz";
+  } else if (n % 5 === 0) {
+    return "Buzz";
+  } else if (n % 7 === 0) {
+    return "Bazz";
+  } else if (n % 3 ===0 && n % 5 ===0) {
+    return "FizzBuzz";
+  } else if (n % 3 === 0 && n % 7 === 0) {
+    return "FizzBazz";
+  } else if (n % 5 === 0 && n % 7 === 0) {
+    return "BuzzBazz";
+  } else if (n % 3 === 0 && n % 5 === 0 && n % 7 === 0) {
+    return "FizzBuzzBazz";
+  } else {
+    return n.toString();
+  };
+};
+
+fizzBuzzExtendido();
 
 /* --------------------------------------------------------------------------
    KATA 32 — Descuento en Carrito
@@ -28,8 +47,16 @@ function fizzBuzzExtendido(n) {
    Retorná el precio final a pagar.
 -------------------------------------------------------------------------- */
 function calcularTotal(precios) {
+  const precio = [1000, 2000, 3000, 4000, 5000];
   // TU CÓDIGO AQUÍ 👇
-}
+  const descuento = precio * 0.15;
+  const total = descuento - precio;
+
+  if (precios > 5000) {
+    return total;
+  }
+};
+calcularTotal();
 
 /* --------------------------------------------------------------------------
    KATA 33 — Contador de Pares e Impares
@@ -39,7 +66,19 @@ function calcularTotal(precios) {
 -------------------------------------------------------------------------- */
 function contarParesEImpares(limite) {
   // TU CÓDIGO AQUÍ 👇
-}
+
+  const limite = 20;
+  
+  for (let i = 1; i <= limite; i++) {
+    if (i % 2 === 0) {
+      return { pares: i };
+    } else {
+      return { impares: i };
+    };
+  }; 
+  return { pares: 10, impares: 10 };
+};
+contarParesEImpares();
 
 /* --------------------------------------------------------------------------
    KATA 34 — Palabras en Mayúsculas
@@ -49,7 +88,13 @@ function contarParesEImpares(limite) {
 -------------------------------------------------------------------------- */
 function palabrasEnMayusculas(oracion) {
   // TU CÓDIGO AQUÍ 👇
-}
+  const array = [];
+
+  const oracion = "facundo, emanuel, ibaquez";
+
+  return array.push(oracion.toUpperCase());
+};
+palabrasEnMayusculas();
 
 /* --------------------------------------------------------------------------
    KATA 35 — Clasificar Número
@@ -60,7 +105,18 @@ function palabrasEnMayusculas(oracion) {
 -------------------------------------------------------------------------- */
 function clasificarNumero(numero) {
   // TU CÓDIGO AQUÍ 👇
-}
+
+  const numero = [10, 15 , 20 , 50 , 35];
+
+  Math.random(numero);
+
+  if (numero % 2 === 0 && numero > 5) {
+    return {esPar: true, mayorQueCinco: true};
+  } else {
+    return {esPar: false, mayorQueCinco: false};
+  };
+};
+clasificarNumero();
 
 /* --------------------------------------------------------------------------
    KATA 36 — Divisibles por 3 pero no por 9
@@ -70,7 +126,15 @@ function clasificarNumero(numero) {
 -------------------------------------------------------------------------- */
 function divisiblesPor3NoNueve(limite) {
   // TU CÓDIGO AQUÍ 👇
-}
+  const limite = [3, 12, 15, 18, 21, 27];
+
+  for (let i = 1; i <= limite; i++) {
+    if (i % 3 === 0 && i % 9 !== 0) {
+      return i;
+    };
+  };
+};
+divisiblesPor3NoNueve();
 
 /* --------------------------------------------------------------------------
    KATA 37 — Conversión de Temperatura
@@ -81,7 +145,14 @@ function divisiblesPor3NoNueve(limite) {
 -------------------------------------------------------------------------- */
 function convertirTemperatura(celsius) {
   // TU CÓDIGO AQUÍ 👇
-}
+
+  const fahrenheit = Math.round((celsius * 9/5 + 32) * 100) / 100;
+  const kelvin = celsius + 273.15;
+
+  return { fahrenheit: fahrenheit, kelvin: kelvin };
+
+};
+convertirTemperatura();
 
 /* --------------------------------------------------------------------------
    KATA 38 — Contar Tiradas de Dado
@@ -91,7 +162,26 @@ function convertirTemperatura(celsius) {
 -------------------------------------------------------------------------- */
 function contarTiradas(tiradas) {
   // TU CÓDIGO AQUÍ 👇
-}
+
+  const tiradas = [ 1, 2, 3, 4, 5, 6];
+
+  for (let i = 0; i < tiradas.lenght; i++) {
+    if (tiradas[i] === 1) {
+      return { 1: 3 };
+    } else if (tiradas[i] === 2) {
+      return { 2: 1 };
+    } else if (tiradas[i] === 3) {
+      return { 3: 1 };
+    } else if (tiradas[i] === 4) {
+      return {4: 1};
+    } else if (tiradas [i] === 5) {
+      return {5: 1};
+    } else if (tiradas [i] === 6) {
+      return {6: 1};
+    };
+  };
+};
+contarTiradas();
 
 /* --------------------------------------------------------------------------
    KATA 39 — Divisores de un Número
@@ -101,7 +191,18 @@ function contarTiradas(tiradas) {
 -------------------------------------------------------------------------- */
 function obtenerDivisores(numero) {
   // TU CÓDIGO AQUÍ 👇
-}
+
+  const divisores = [];
+  const numero = 27;
+
+  for (let i=1; i <= numero; i++) {
+    if (numero % i === 0) {
+      return divisores.push(i);
+    };
+  };
+  return divisores;
+};
+obtenerDivisores();
 
 /* --------------------------------------------------------------------------
    KATA 40 — DESAFÍO FINAL: Adivina el Número
@@ -114,7 +215,20 @@ function obtenerDivisores(numero) {
 -------------------------------------------------------------------------- */
 function adivinarNumero(secreto, intentos) {
   // TU CÓDIGO AQUÍ 👇
-}
+
+  const resultado = [];
+  const secreto = Math.floor(Math.random() * 100) +1;
+  const intentos = 0;
+
+  if (intentos < secreto) {
+    return resultado.push("Demasiado bajo");
+  } else if (intentos > secreto) {
+    return resultado.push("Demasiado alto.");
+  } else if (intentos === secreto) {
+    return resultado.push(`¡Corecto!, el número es: ${secreto}`);
+  };
+};
+adivinarNumero();
 
 // 🚨 ¡NO TOCAR ESTA LÍNEA!
 module.exports = {
